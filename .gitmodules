@@ -1,0 +1,15 @@
+[submodule "custom_nodes/comfyui-easyapi-nodes"]
+	path = custom_nodes/comfyui-easyapi-nodes
+	url = https://github.com/lldacing/comfyui-easyapi-nodes.git
+[submodule "custom_nodes/ComfyUI-Extra-Samplers"]
+	path = custom_nodes/ComfyUI-Extra-Samplers
+	url = https://github.com/Clybius/ComfyUI-Extra-Samplers.git
+[submodule "custom_nodes/comfyui-inpaint-nodes"]
+	path = custom_nodes/comfyui-inpaint-nodes
+	url = https://github.com/Acly/comfyui-inpaint-nodes.git
+[submodule "custom_nodes/ComfyUI-Manager"]
+	path = custom_nodes/ComfyUI-Manager
+	url = https://github.com/ltdrdata/ComfyUI-Manager.git
+[submodule "custom_nodes/comfyui-base64-to-image"]
+	path = custom_nodes/comfyui-base64-to-image
+	url = https://github.com/glowcone/comfyui-base64-to-image.git
