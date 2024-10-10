@@ -13,3 +13,6 @@
 [submodule "custom_nodes/comfyui-base64-to-image"]
 	path = custom_nodes/comfyui-base64-to-image
 	url = https://github.com/glowcone/comfyui-base64-to-image.git
+[submodule "custom_nodes/comfyui-inspire-pack"]
+	path = custom_nodes/comfyui-inspire-pack
+	url = https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git
