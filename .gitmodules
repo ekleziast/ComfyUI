@@ -19,3 +19,6 @@
 [submodule "custom_nodes/comfyui-essentials"]
 	path = custom_nodes/comfyui-essentials
 	url = https://github.com/cubiq/ComfyUI_essentials.git
+[submodule "custom_nodes/comfyui-inpaint-CropAndStitch"]
+	path = custom_nodes/comfyui-inpaint-CropAndStitch
+	url = https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch.git
