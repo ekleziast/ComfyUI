@@ -22,3 +22,6 @@
 [submodule "custom_nodes/comfyui-inpaint-CropAndStitch"]
 	path = custom_nodes/comfyui-inpaint-CropAndStitch
 	url = https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch.git
+[submodule "custom_nodes/ComfyUI-FreeMemory"]
+	path = custom_nodes/ComfyUI-FreeMemory
+	url = https://github.com/ShmuelRonen/ComfyUI-FreeMemory.git
