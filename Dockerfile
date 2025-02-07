@@ -5,7 +5,8 @@ FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
-ENV PATH="comfy/bin:$PATH"
+ENV VIRTUAL_ENV=/comfy
+ENV PATH="/comfy/bin:$PATH"
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -15,11 +16,18 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory
 WORKDIR /app
+
+COPY requirements.txt .
+
+RUN python3 -m venv ${VIRTUAL_ENV} && \
+    ${VIRTUAL_ENV}/bin/pip install --upgrade pip && \
+    ${VIRTUAL_ENV}/bin/pip install -r requirements.txt
 
 # Expose the default port
 EXPOSE $PORT
 
 # Start ComfyUI
-CMD ["sh", "-c", ". comfy/bin/activate && python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
+#CMD ["sh", "-c", ". comfy/bin/activate && python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
+CMD ["sh", "-c", ". ${VIRTUAL_ENV}/bin/activate && pip install --upgrade pip &&  python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
+#CMD ["sh", "-c", "nvidia-smi"]
