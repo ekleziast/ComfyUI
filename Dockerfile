@@ -28,6 +28,4 @@ RUN python3 -m venv ${VIRTUAL_ENV} && \
 EXPOSE $PORT
 
 # Start ComfyUI
-#CMD ["sh", "-c", ". comfy/bin/activate && python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
 CMD ["sh", "-c", ". ${VIRTUAL_ENV}/bin/activate && pip install --upgrade pip &&  python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
-#CMD ["sh", "-c", "nvidia-smi"]
