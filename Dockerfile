@@ -19,14 +19,6 @@ RUN apt-get update && apt-get install -y \
 # Set the working directory
 WORKDIR /app
 
-# Copy the existing ComfyUI directory into the container
-COPY . .
-
-# Create and activate the virtual environment, then install dependencies
-#RUN python3 -m venv $VIRTUAL_ENV && \
-#    pip install --upgrade pip && \
-#    pip install -r requirements.txt
-
 # Expose the default port
 EXPOSE $PORT
 
