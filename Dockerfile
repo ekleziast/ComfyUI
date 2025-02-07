@@ -5,8 +5,7 @@ FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
-ENV VIRTUAL_ENV=/comfy
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PATH="comfy/bin:$PATH"
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -23,4 +22,4 @@ WORKDIR /app
 EXPOSE $PORT
 
 # Start ComfyUI
-CMD ["sh", "-c", "source $VIRTUAL_ENV/bin/activate && python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
+CMD ["sh", "-c", ". comfy/bin/activate && python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
