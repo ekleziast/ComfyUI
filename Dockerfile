@@ -28,4 +28,4 @@ RUN python3 -m venv ${VIRTUAL_ENV} && \
 EXPOSE $PORT
 
 # Start ComfyUI
-CMD ["sh", "-c", ". ${VIRTUAL_ENV}/bin/activate &&  python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
+CMD ["sh", "-c", ". ${VIRTUAL_ENV}/bin/activate && python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device 0 --highvram"]
