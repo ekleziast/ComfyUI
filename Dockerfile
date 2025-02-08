@@ -1,5 +1,5 @@
 # Use the official NVIDIA CUDA image as the base
-FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.0-runtime-ubuntu20.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -28,4 +28,4 @@ RUN python3 -m venv ${VIRTUAL_ENV} && \
 EXPOSE $PORT
 
 # Start ComfyUI
-CMD ["sh", "-c", ". ${VIRTUAL_ENV}/bin/activate && pip install --upgrade pip &&  python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
+CMD ["sh", "-c", ". ${VIRTUAL_ENV}/bin/activate &&  python3 main.py --listen 0.0.0.0 --port $PORT --cuda-device $DEVICE_ID --highvram"]
