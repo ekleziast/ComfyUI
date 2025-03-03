@@ -25,3 +25,6 @@
 [submodule "custom_nodes/ComfyUI-FreeMemory"]
 	path = custom_nodes/ComfyUI-FreeMemory
 	url = https://github.com/ShmuelRonen/ComfyUI-FreeMemory.git
+[submodule "custom_nodes/KJNodes"]
+	path = custom_nodes/KJNodes
+	url = https://github.com/kijai/ComfyUI-KJNodes.git
