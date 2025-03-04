@@ -1,5 +1,5 @@
 # Use the official NVIDIA CUDA image as the base
-FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
+FROM nvidia/cuda:12.6.0-runtime-ubuntu22.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -30,6 +30,9 @@ WORKDIR /app
 COPY custom_nodes/ custom_nodes/
 
 RUN python3.10 custom_nodes/install_requirements.py
+
+RUN ${VIRTUAL_ENV}/bin/pip install --pre --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126
+RUN ${VIRTUAL_ENV}/bin/pip install xformers
 
 # Expose the default port
 EXPOSE $PORT
