@@ -31,7 +31,7 @@ COPY custom_nodes/ custom_nodes/
 
 RUN python3.10 custom_nodes/install_requirements.py
 
-RUN ${VIRTUAL_ENV}/bin/pip install --pre --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126
+RUN ${VIRTUAL_ENV}/bin/pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 RUN ${VIRTUAL_ENV}/bin/pip install xformers
 
 # Expose the default port
