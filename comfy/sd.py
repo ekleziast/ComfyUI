@@ -50,6 +50,8 @@ import comfy.taesd.taesd
 
 import comfy.ldm.flux.redux
 
+import os
+
 def load_lora_for_models(model, clip, lora, strength_model, strength_clip):
     key_map = {}
     if model is not None:
@@ -511,7 +513,7 @@ class VAE:
                 pixel_samples[x:x+batch_number] = out
         except model_management.OOM_EXCEPTION:
             logging.warning("Warning: Ran out of memory when regular VAE decoding, retrying with tiled VAE decoding.")
-            quit()
+            os._exit()
             dims = samples_in.ndim - 2
             if dims == 1:
                 pixel_samples = self.decode_tiled_1d(samples_in)
@@ -574,7 +576,7 @@ class VAE:
 
         except model_management.OOM_EXCEPTION:
             logging.warning("Warning: Ran out of memory when regular VAE encoding, retrying with tiled VAE encoding.")
-            quit()
+            os._exit()
             if self.latent_dim == 3:
                 tile = 256
                 overlap = tile // 4
