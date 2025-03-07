@@ -33,6 +33,7 @@ RUN python3.10 custom_nodes/install_requirements.py
 
 RUN ${VIRTUAL_ENV}/bin/pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 RUN ${VIRTUAL_ENV}/bin/pip install xformers
+RUN ${VIRTUAL_ENV}/bin/pip install psutil
 
 # Expose the default port
 EXPOSE $PORT
