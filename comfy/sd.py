@@ -52,6 +52,9 @@ import comfy.ldm.flux.redux
 
 import os
 import psutil
+import time
+
+start_time = time.time()
 
 def load_lora_for_models(model, clip, lora, strength_model, strength_clip):
     key_map = {}
@@ -559,6 +562,11 @@ class VAE:
         return output.movedim(1, -1)
 
     def encode(self, pixel_samples):
+        current_time = time.time()
+        if (current_time - start_time) / (60 ** 2) >= 4:
+            logging.warning("Warning: Exiting process after 4 hours...")
+            os._exit(1)
+
         pixel_samples = self.vae_encode_crop_pixels(pixel_samples)
         pixel_samples = pixel_samples.movedim(-1, 1)
         if self.latent_dim == 3 and pixel_samples.ndim < 5:
