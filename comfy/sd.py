@@ -514,9 +514,9 @@ class VAE:
                 pixel_samples[x:x+batch_number] = out
         except model_management.OOM_EXCEPTION:
             logging.warning("Warning: Ran out of memory when regular VAE decoding, retrying with tiled VAE decoding.")
-            if psutil.virtual_memory().available / (1024.0 ** 3) < 2:
-                logging.warning("Error: Ran out of memory. Exiting process")
-                os._exit(1)
+            #if psutil.virtual_memory().available / (1024.0 ** 3) < 2:
+            #    logging.warning("Error: Ran out of memory. Exiting process")
+            #    os._exit(1)
             dims = samples_in.ndim - 2
             if dims == 1:
                 pixel_samples = self.decode_tiled_1d(samples_in)
