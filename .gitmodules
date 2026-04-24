@@ -28,3 +28,15 @@
 [submodule "custom_nodes/KJNodes"]
 	path = custom_nodes/KJNodes
 	url = https://github.com/kijai/ComfyUI-KJNodes.git
+[submodule "custom_nodes/ComfyUI-GGUF"]
+	path = custom_nodes/ComfyUI-GGUF
+	url = https://github.com/city96/ComfyUI-GGUF.git
+[submodule "custom_nodes/ComfyUI_PuLID_Flux_ll"]
+	path = custom_nodes/ComfyUI_PuLID_Flux_ll
+	url = https://github.com/lldacing/ComfyUI_PuLID_Flux_ll.git
+[submodule "custom_nodes/ComfyUI-DepthAnythingV2"]
+	path = custom_nodes/ComfyUI-DepthAnythingV2
+	url = https://github.com/kijai/ComfyUI-DepthAnythingV2.git
+[submodule "custom_nodes/ComfyUI-MMAudio"]
+	path = custom_nodes/ComfyUI-MMAudio
+	url = https://github.com/kijai/ComfyUI-MMAudio.git
